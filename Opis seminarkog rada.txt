@@ -1,0 +1,19 @@
+Napisati program koji omogućava unošenje rezultata prijemnog ispita. Rezultati se unose preko formulara koji sadrži polja koja odgovaraju podacima koji se nalaze u relaciji prijavljeni: 
+create table prijavljeni 
+(rbr smallint not null, 
+ime char(20) not null with default, 
+prezime char(20) not null with default, 
+jmbg char(13) not null with default, 
+id_smer_1 integer not null with default,
+id_smer_2 integer not null with default, 
+id_smer_3 integer not null with default, 
+prosek_I_god double not null with default, 
+prosek_II_god double not null with default, 
+prosek_III_god double not null with default, 
+prosek_IV_god double not null with default, 
+prijemni smallint not null with default, 
+ukupno double not null with default, 
+primary key (rbr)) 
+Sva polja u formularu, sem onih koja odogovaraju atributima RBR i PRIJEMNI, prikazuju se kao zastištićena polja (postojeći podaci ne mogu da se menjaju). Program treba da obezbedi sledeće: ­ Operater postavlja upit unošenjem sadržaja polja RBR. Ako ne postoji slog sa tim brojem kandidata prikazati poruku 'Uneti redni broj ne postoji'. U slučaju da slog postoji na formularu se prikazuju ostali podaci i može da se unese sadržaj polja PRIJEMNI. Ako se promeni sadržaj polja RBR tada se, bez obzira na eventualno promenjeni sadržaj polja prijemni, na osnovu njega ponovo dobijaju ostali podaci iz baze, i ne vrši se promena podatka PRIJEMNI u bazi. ­ 
+Unošenje podataka o jednom kandidatu predstavlja jednu transakciju (ako je sve u redu na kraju sledi commit). U slučaju da transakcija ne može da bude izvršena prijaviti odgovarajući kod greške, a ako je transakcija uspesno izvršena (podaci su upisani u tabelu) i prikazati poruku 'Rezultat obrađen'. ­ Izlazak iz programa se postiže pritiskom na dugme 'Prekid'. ­ Pri unošenju rezultata prijemnog ispita, pre upisivanja u bazu, izračunati ukupan broj poena. Dobijeni rezultat prikazati na formularu. Takođe, obezbediti da sadržaj polja PRIJEMNI mora da bude unet. Omogućiti i štampanje izveštaja o kandidatima. Omogućiti izbor sortiranja kandidata po rednom broju ili ukupnom broju poena. 
+
